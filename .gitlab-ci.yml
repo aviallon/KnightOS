@@ -1,0 +1,12 @@
+image: 'archlinux:latest'
+
+build:
+    script:
+        - pacman -Syu --noconfirm base-devel imagemagick python python-setuptools python-requests python-docopt python-yaml python-pystache
+        - curl -LO https://raw.githubusercontent.com/KnightOS/knightos.org/gh-pages/install-sdk
+        - chmod +x install-sdk && ./install-sdk
+        - knightos init
+        - make upgrade
+    artifacts:
+        paths:
+            - bin/
