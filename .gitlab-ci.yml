@@ -4,7 +4,8 @@ build:
     script:
         - pacman -Syu --noconfirm --needed base-devel imagemagick python python-setuptools python-requests python-docopt python-yaml cmake git asciidoc mono mono-tools python-pip sdl sdl2 boost
         - curl -LO https://raw.githubusercontent.com/KnightOS/knightos.org/gh-pages/install-sdk
-        - chmod +x install-sdk && ./install-sdk
+        - chmod +x install-sdk
+        - CFLAGS="-O2 -w" CXXFLAGS="-O2 -w" ./install-sdk
         - knightos init
         - make upgrade
     artifacts:
