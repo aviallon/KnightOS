@@ -71,7 +71,8 @@ upgrade: rom $(OUT)exploit.bin
 		rm temp.rom;\
 	else\
 		mktiupgrade -p -d $(PLATFORM) -k keys/$(KEY).key -n $(KEY) $(OUT)KnightOS-$(PLATFORM).rom \
-			$(OUT)KnightOS-$(PLATFORM).$(UPGRADEEXT) 00 01 02 03 04 05 06 07 08 $(FAT) $(PRIVILEGED);\
+			$(OUT)KnightOS-$(PLATFORM).$(UPGRADEEXT) 00 01 02 03 04 05 06 07 08 09 0A 0B $(FAT) $(PRIVILEGED);\
 	fi
+
 
 include .knightos/sdk.make
